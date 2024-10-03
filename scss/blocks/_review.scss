@@ -1,0 +1,101 @@
+.review{
+    padding-bottom: clamp(3.75rem, 0.841rem + 12.41vw, 11.313rem);
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
+    position: relative;
+    &:before{
+        position: absolute;
+        content:"";
+        filter: blur(80px);
+        background-color: #fd723375;
+        width: 224px;
+        height: 311px;
+        top: 0;
+        right: 0;
+        z-index: -1;
+    }
+    .container{
+        max-width: 1350px;
+        width: 100%;
+    }
+    &__content--media{
+        display: none;
+    }
+    &__title{
+        @extend %title;
+        font-size: clamp(1.875rem, 1.322rem + 2.36vw, 3.313rem);
+        line-height: 1.42;
+    }
+    &__titleBottom{
+        display: flex;
+        align-items: center;
+        gap: 70px;
+    }
+    &__text{
+        display: inline-block;
+        @extend %inter-400;
+        max-width: 448px;
+        font-size: 14px;
+        line-height: 1.8;
+        transform: translateY(8px);
+    }
+    &__items{
+        display: flex;
+        gap: 43px;
+        align-items: flex-start;
+        animation: leftRight 50s infinite linear;
+    }
+    .slick-slide{
+        margin: 0 30px;
+    }
+    @media(max-width:1023px){
+        &__content{
+            display: none;
+        }
+        &__content--media{
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+            text-align: center;
+        }
+        &__text{
+            max-width: 65%;
+        }
+    }
+    @media(max-width:767px){
+        &__items{
+            animation: none;
+            padding-bottom: 80px;
+        }
+        &__text{
+            max-width: 100%;
+        }
+        .slick-arrow{
+            position: absolute;
+            bottom: 0;
+            border-radius: 50%;
+        }
+        .slick-prev{
+            left: 15px;
+        }
+        .slick-next{
+            right: 15px;
+        }
+    }
+    @media(max-width:610px){
+        .slick-slide{
+            margin: 0;
+        }
+    }
+}
+
+@keyframes leftRight{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(100%);
+    }
+}

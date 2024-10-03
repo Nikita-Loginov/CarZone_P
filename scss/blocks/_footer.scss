@@ -1,0 +1,168 @@
+.footer{
+    padding: clamp(3.75rem, 2.571rem + 5.03vw, 6.25rem) 0;
+    background-color: #150a05;
+    .container{
+        max-width: 1170px;
+    }
+    &__inner{
+        display: flex;
+        flex-direction: column;
+        gap: 96px;
+    }
+    &__top{
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        align-items: center;
+    }
+    &__top-title{
+        @extend %title;
+        font-size: clamp(1.875rem, 1.322rem + 2.36vw, 3.313rem);
+        color:#fff;
+    }
+    &__top-link{
+        @extend %link;
+        @extend %inter-400;
+        min-height: 56px;
+        border-radius: 28px;
+        padding: 0 53px;
+        transition: all .5s;
+        margin-right: 25px;
+        &:hover{
+            background-color: #fff;
+            color:#000;
+        }
+    }
+    &__content{
+        display: flex;
+        justify-content: space-between;
+        gap: 73px;
+        padding-top: 75px;
+        border-top: 2px solid #fff;
+    }
+    &__item{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    &__text{
+        color:#fff;
+        max-width: 255px;
+    }
+    &__listbox{
+        display: flex;
+        gap: clamp(1.25rem, -24.847rem + 40.82vw, 5rem);
+        margin-left: auto;
+    }
+    &__list{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    &__list-item{
+        @extend %linkHover;
+    }
+    &__list-itembox{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    &__list-title{
+        color:#fff;
+        font-size: 16px;
+        @extend %inter-700;
+    }
+    &__list-itembox{
+        display: flex;
+        flex-direction: column;
+    }
+    &__list-link{
+        color:#fff;
+    }
+    &__form{
+        max-width: 224px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    &__form-title{
+        color:#fff;
+        font-size: 16px;
+        @extend %inter-700;
+    }
+    &__form-application{
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+    &__form-input{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 24px;
+        background-color: #fc621c24;
+        font-size: 14px;
+        padding: 0 18px;
+        color:#fff;
+        min-height: 42px;
+        transition: all .5s;
+        &::placeholder{
+            font-size: 14px;
+            color:#fff;
+            color:#fff;
+        }
+        &:focus{
+            background-color: $inputFocusActive-colorbg;
+        }
+        &:active{
+            background-color: $inputFocusActive-colorbg;
+        }
+    }
+    &__form-btn{
+        @extend %btn;
+        @extend %inter-400;
+        min-height: 46px;
+        border-radius: 23px;
+        padding: 0 53px;
+    }
+    @media(max-width:1023px){
+        &__content{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+        }
+        &__item{
+            order:1;
+        }
+        &__listbox{
+            margin: 0;
+            justify-content: space-between;
+        }
+        &__form{
+            max-width: 100%;
+        }
+    }
+    @media(max-width:767px){
+        &__inner{
+            gap: 46px;
+        }
+        &__content{
+            grid-template-columns: repeat(1,1fr);
+            padding-top: 40px;
+            gap: 43px;
+        }
+        &__form-input{
+            min-height: 50px;
+        }
+    }
+    @media(max-width:610px){
+        &__top{
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        &__top-link{
+            margin: 0;
+            width: 100%;
+        }
+    }
+}

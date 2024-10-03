@@ -1,0 +1,137 @@
+.team{
+    padding-bottom: clamp(3.75rem, 2.181rem + 6.7vw, 8.438rem);
+    position: relative;
+    &:before{
+        position: absolute;
+        content:"";
+        filter: blur(80px);
+        background-color: #fd723375;
+        width: 492px;
+        height: 492px;
+        top: 0;
+        left: -369px;
+        z-index: -1;
+    }
+    &__inner{
+        display: flex;
+        flex-direction: column;
+        gap: clamp(1.25rem, 0.392rem + 3.66vw, 3.813rem);
+    }
+    &__content{
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+        text-align: center
+    }
+    &__title{
+        @extend %title;
+    }
+    &__text{
+        color:#000;
+        max-width: 562px;
+        margin: 0 auto;
+        line-height: 1.8;
+    }
+    &__items{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 20px;
+        justify-content: space-between;
+    }
+    &__item{
+        display: flex;
+        flex-direction: column;
+        gap: 31px;
+        max-width: 456px;
+        &:nth-child(2n){
+            margin-top: 80px;
+        }
+        &:nth-child(3n){
+            margin-top: 124px;
+        }
+    }
+    &__item-content{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    &__item-name{
+        @extend %text;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+    }
+    &__item-name-decor{
+        display: inline-block;
+        width: 76px;
+        height: 1px;
+        background-color: #000;
+        transform: translateY(2px);
+    }
+    &__item-position{
+        font-size: 26px;
+    }
+    &__item-contact{
+        font-size: 20px;
+        color:#000;
+        display: flex;
+        align-items: center;
+        padding-left: 30px;
+        position: relative;
+        &:before{
+            position: absolute;
+            content:"";
+            left: 0;
+            width: 22px;
+            height: 22px;
+            background-image: url(../img/icon/tel.svg);
+        }
+    }
+    @media(max-width:1500px){
+        &__item-img{
+            width: 100%;
+            height: auto;
+        }
+    }
+    @media(max-width:1350px){
+        padding-top: 60px;
+    }
+    @media(max-width:1090px){
+        &__item-name-decor{
+            display: none;
+        }
+    }
+    @media(max-width:950px){
+        &__items{
+            grid-template-columns: repeat(2,1fr);
+            gap: 25px;
+        }
+        &__item{
+            &:nth-child(2n){
+                margin-top: 0;
+            }
+            &:nth-child(3n){
+                margin-top: 0;
+            }
+        }
+        @media(max-width:610px){
+            &__items{
+                grid-template-columns: repeat(1,1fr);
+                gap: 45px;
+            }
+            &__item{
+                max-width: 100%;
+                gap: 10px;
+            }
+            &__item-name{
+                font-size: 26px;
+            }
+            &__item-position{
+                font-size: 22px;
+            }
+            &__item-contact{
+                font-size: 18px;
+            }
+        }
+    }
+}

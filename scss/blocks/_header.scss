@@ -1,0 +1,75 @@
+.header{
+    padding: 46px 0;
+    &__inner{
+        max-width: 1170px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    &__logo{
+        position: relative;
+        z-index: 10;
+    }
+    &__account{
+        display: flex;
+        align-items: center;
+        gap: 37px;
+        position: relative;
+        z-index: 99;
+    }
+    &__account-notification{
+        background-color: transparent;
+        position: relative;
+    }
+    &__account-notification-decor{
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px solid rgb(255, 255, 255);
+        background-color: rgb(221, 65, 65);
+        font-size: 12px;
+        @extend %inter-700;
+        color:#fff;
+        position: absolute;
+        right: -6px;
+        top: -8px;
+    }
+    &__account-entry{
+        @extend %flexCenter;
+        @include border(1px,rgb(0, 0, 0),solid);
+        @extend %inter-700;
+        background-color: transparent;
+        padding: 0 24px;
+        border-radius: $borderRadiusBtn;
+        min-height: $minHeight-btn;
+        color:#000;
+        overflow: hidden;
+        transition: all .5s;
+        &:hover{
+            background-color: $accent-color;
+            border-color:  $accent-color;
+            color:#fff;
+        }
+    }
+    @media(max-width:767px){
+        &__logo{
+            order: -2;
+        }
+        &__account{
+            order: -1;
+            margin-left: auto;
+        }
+    }
+    @media(max-width:510px){
+        padding-top: 15px;
+        &__logo{
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

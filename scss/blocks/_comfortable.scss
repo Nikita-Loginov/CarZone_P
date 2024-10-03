@@ -1,0 +1,132 @@
+.comfortableOne{
+    padding-bottom: clamp(3.75rem, 2.246rem + 6.42vw, 7.5rem);
+    position: relative;
+    &:before{
+        position: absolute;
+        content:"";
+        filter: blur(80px);
+        background-color: #fd723375;
+        width: 492px;
+        height: 492px;
+        bottom: -101px;
+        right: -131px;
+        z-index: -1;
+    }
+    &__content{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    &__inner{
+        max-width: 1310px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 75px;
+    }
+    &__content{
+        text-align: center
+    }
+    &__title{
+        @extend %title;
+    }
+    &__text{
+        max-width: 562px;
+        margin: 0 auto;
+    }
+    &__items{
+        display: grid;
+        grid-template-columns: repeat(3,auto);
+        gap: 40px;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+    &__item--text{
+        width: 292px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        line-height: 1.8;
+    }
+    &__item--imgs{
+        display: flex;
+        gap: 44px 30px;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+    &__item-imgRadius{
+        border-radius: 200px;
+    }
+    &__item-imgtext{
+        display: none;
+    }
+    @media(max-width:1350px){
+        &__item--imgs{
+            img{
+                display: none;
+            }
+            .comfortableOne__item-imgMedia{
+                display: block;
+            }
+        }
+        &__item--text{
+            display: none;
+        }
+        &__item-imgtext{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+    @media(max-width:1080px){
+        &__items{
+            gap: 20px;
+        }
+        &__item--imgs{
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+    @media(max-width:830px){
+        &__item--imgs{
+            .comfortableOne__item-imgMedia{
+                display: none;
+            }
+        }
+        &__item--img{
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+        &__items{
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+    @media(max-width:767px){
+        &__inner{
+            gap: 30px;
+        }
+        &__content{
+            gap: 15px;
+        }
+        &__items{
+            grid-template-columns: repeat(1,1fr);
+        }
+        &__item--img{
+            img{
+                width: auto;
+            }
+        }
+    }
+    @media(max-width:510px){
+        &__item--img{
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

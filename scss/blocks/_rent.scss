@@ -1,0 +1,120 @@
+.rent{
+    padding: clamp(3.75rem, 2.494rem + 5.36vw, 7.5rem) 0;
+    display: flex;
+    position: relative;
+    align-items: center;
+    &:before{
+        position: absolute;
+        content:"";
+        filter: blur(80px);
+        background-color: #e4480159;
+        width: 394px;
+        height: 394px;
+        top: 126px;
+        left: -227px;
+        z-index: -1;
+    }
+    .container{
+        flex-basis: 780px;
+        width: 100%;
+        flex-shrink: 0;
+        padding: 0 0 0 15px;
+    }
+    &__content{
+        display: flex;
+        flex-direction: column;
+        gap: 67px;
+    }
+    &__info{
+        display: flex;
+        flex-direction: column;
+    }
+    &__title{
+        @extend %title;
+    }
+    &__text{
+        line-height: 1.8;
+        max-width: 534px
+    }
+    &__form{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 42px;
+        width: 100%;
+    }
+    &__form-items{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 48px 38px;
+        width: 100%;
+    }
+    &__form-input{
+        @extend %input;
+        padding-left: 30px;
+        width: 100%;
+    }
+    &__form-btn{
+        @extend %btn;
+        min-height: 59px;
+        padding: 0 44px;
+        transition: all .5s;
+        &:hover{
+            border-radius: 15px;
+            background-color: $accent-color;
+            color:#fff;
+        }
+    }
+    &__imgbox{
+        position: relative;
+        right: -65px;
+        img{
+            border-radius: 35px;
+        }
+    }
+    &__img-decor{
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        width: 711px;
+        height: 543px;
+        border: 1px solid rgb(252, 98, 28);
+        border-radius: 35px;
+        z-index: -1;
+    }
+    @media(max-width:1500px){
+        &__img-decor{
+            display: none;
+        }
+    }
+    @media(max-width:1230px){
+        &__imgbox{
+            display: none;
+        }
+        .container{
+            padding: 0 15px;
+            flex-basis: auto;
+        }
+        &__content{
+            gap: 37px;
+        }
+        &__info{
+            align-items: center;
+            text-align: center;
+        }
+    }
+    @media(max-width:610px){
+        &__form-items{
+            grid-template-columns: repeat(1,1fr);
+            gap: 20px;
+        }
+    }
+    @media(max-width:610px){
+        &__form{
+            gap: 30px;
+        }
+        &__form-btn{
+            width: 100%;
+        }
+    }
+}

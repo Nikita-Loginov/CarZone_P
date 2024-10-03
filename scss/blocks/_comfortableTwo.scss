@@ -1,0 +1,110 @@
+.comfortableTwo{
+    padding: 72px 0 348px;
+    margin-bottom: 305px;
+    background-color: $accent-color;
+    position: relative;
+    &__inner{
+        max-width: 1135px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+    }
+    &__content{
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        align-items: flex-end;
+        position: relative;
+        &:before{
+            position: absolute;
+            content:"Comfortable Car";
+            @extend %title;
+            font-size: 91px;
+            top: -72px;
+            right: -154px;
+            color:rgba(255,255,255,0.08)
+        }
+    }
+    &__title{
+        @extend %title;
+        color:#fff;
+        max-width: 456px;
+        line-height: 1.42;
+    }
+    &__text{
+        max-width: 573px;
+        color:#fff;
+        margin-right: 34px;
+    }
+    &__imgbox{
+        position: absolute;
+        bottom: -143px;
+    }
+    &__img{
+        border-radius: 5px;
+        &--left,
+        &--right{
+            border-radius: 0;
+            position: absolute;
+        }
+        &--left{
+            top: 63px;
+            left: -92px;
+        }
+        &--right{
+            right: 0;
+            bottom: -41px;
+        }
+    }
+    @media(max-width:1500px){
+        &__content{
+            &:before{
+                display: none;
+            }
+        }
+    }
+    @media(max-width:1350px){
+        padding-bottom: 80px;
+        margin: 0;
+        &__imgbox{
+            position: static;
+        }
+        &__img--right,
+        &__img--left{
+            display: none;
+        }
+    }
+    @media(max-width:1279px){
+        &__imgbox{
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+        &__text{
+            margin: 0;
+        }
+    }
+    @media(max-width:1023px){
+        &__inner{
+            gap: 25px;
+        }
+        &__content{
+            text-align: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        &__title{
+            max-width: 100%;
+        }
+        &__text{
+            max-width: 85%;
+        }
+    }
+    @media(max-width:610px){
+        &__text{
+            max-width: 100%;
+        }
+    }
+}

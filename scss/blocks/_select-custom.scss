@@ -1,0 +1,47 @@
+.select-custom{
+    @include padding(0,20px,0,20px);
+    @include border(1px,rgba(0, 0, 0, 0.05),solid);
+    background-color: #f9f9f9;
+    min-height: 58px;
+    font-size: 14px;
+    line-height: 1.8;
+    letter-spacing: 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    &__item{
+        cursor: pointer;
+    }
+    &__item-main{
+        display: block;
+        position: relative;
+        padding-right: 15px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        &:before{
+            position: absolute;
+            content:"";
+            right: 0;
+            width: 11px;
+            height: 7px;
+            background-image: url(../img/icon/selectArrow.svg);
+            transform: translateY(1px);
+        }
+    }
+    &__item-open{
+        display: none;
+        position: absolute;
+        left: 20px;
+        top: 80%;
+        flex-direction: column;
+        gap: 5px;
+        background: #000;
+        color: #fff;
+        padding: 0 10px;
+        border-radius: 0 0 10px 10px;
+        &.open{
+            display: flex;
+        }
+    }
+}
